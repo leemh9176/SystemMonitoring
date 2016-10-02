@@ -1,0 +1,27 @@
+{
+  "name": "monitering_web_service",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.4",
+    "express-session": "^1.14.0",
+    "fs": "0.0.2",
+    "jquery": "^3.1.0",
+    "jsdom": "^9.4.1",
+    "jui": "^2.0.2",
+    "jui-chart": "^2.0.4",
+    "jui-grid": "^2.0.2",
+    "morgan": "~1.7.0",
+    "mysql": "^2.11.1",
+    "node-mysql": "^0.4.2",
+    "serve-favicon": "~2.3.0"
+  }
+}

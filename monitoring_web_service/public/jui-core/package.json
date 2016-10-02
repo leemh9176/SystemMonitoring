@@ -1,0 +1,100 @@
+{
+  "name": "jui-core",
+  "version": "2.0.4",
+  "description": "The core framework provided by the JUI for implementing such a grid and chart.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": [
+    "dist/core.min.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juijs/jui-core.git"
+  },
+  "keywords": [
+    "HTML5",
+    "NodeJS",
+    "CSS",
+    "JS",
+    "JavaScript",
+    "SVG",
+    "Chart",
+    "Framework",
+    "Web Development",
+    "free",
+    "MIT"
+  ],
+  "author": {
+    "name": "seogi1004"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juijs/jui-core/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-copy": "~0.8.2",
+    "grunt-contrib-qunit": "~0.7.0",
+    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-tasks": "~3.4.0"
+  },
+  "categories": [
+    "Frameworks",
+    "UI"
+  ],
+  "maintainers": [
+    {
+      "name": "easylogic",
+      "email": "cyberuls@gmail.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Jayden",
+      "email": "jayden@jennifersoft.com"
+    },
+    {
+      "name": "Yoha",
+      "email": "yoha@jennifersoft.com"
+    }
+  ],
+  "jam": {
+    "dependencies": {
+      "jquery": ">=1.8.0"
+    },
+    "main": [
+      "dist/core.min.js"
+    ],
+    "shim": {
+      "deps": [
+        "jquery"
+      ],
+      "exports": "jui-core"
+    }
+  },
+  "gitHead": "84c87b59d4011a81031efb954ec2bae73cfd6e3c",
+  "homepage": "https://github.com/juijs/jui-core",
+  "_id": "jui-core@2.0.4",
+  "_shasum": "c162edf94f2e337ad02dcc28f737096511635fdb",
+  "_from": "jui-core@latest",
+  "_npmVersion": "2.7.5",
+  "_nodeVersion": "0.10.21",
+  "_npmUser": {
+    "name": "easylogic",
+    "email": "cyberuls@gmail.com"
+  },
+  "dist": {
+    "shasum": "c162edf94f2e337ad02dcc28f737096511635fdb",
+    "tarball": "https://registry.npmjs.org/jui-core/-/jui-core-2.0.4.tgz"
+  },
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/jui-core-2.0.4.tgz_1459151680141_0.1545400731265545"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/jui-core/-/jui-core-2.0.4.tgz",
+  "readme": "ERROR: No README data found!"
+}

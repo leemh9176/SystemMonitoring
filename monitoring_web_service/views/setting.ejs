@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- Basic style components -->
+  <link rel="stylesheet" href="/jui/dist/ui.min.css" />
+  <link rel="stylesheet" href="/jui/dist/ui-jennifer.min.css" />
+  <!-- Grid style components -->
+  <link rel="stylesheet" href="/jui-grid/dist/grid.min.css" />
+  <link rel="stylesheet" href="/jui-grid/dist/grid-jennifer.min.css" />
+  <script type="text/javascript" src="javascripts/function.js"></script>
+  <script type="text/javascript" src="/jui-core/dist/core.min.js"></script>
+  <script type="text/javascript" src="/jui/dist/ui.min.js"></script>
+  <script type="text/javascript" src="/jui-grid/dist/grid.min.js"></script>
+  <script type="text/javascript" src="/jui-chart/dist/chart.min.js"></script>
+  <script type="text/javascript" src="javascripts/jui_control.js"></script>
+  <script type="text/javascript">
+    function callResize() {
+      var height = document.body.scrollHeight;
+      console.log(height);
+      parent.Resize_Iframe(height);
+    }
+  </script>
+  <title>System Monitoring Service</title>
+</head>
+
+<body class="jui">
+  <div class="popover top">
+    <div class="head">Title</div>
+    <div class="body">
+      <div class="image"><i class="icon-caution"></i></div>
+      <div class="message">Message Message Message Message Message Message Message</div>
+    </div>
+  </div>
+  <div class="my_container" style="padding-left:10px; padding-right:10px;">
+    <h2>Setting</h2>
+    <div class="setting_view">
+      <div class="setting_area">
+        <div class="user_setting_info">
+          <h4>User Setting Info</h4>
+          <div class="user_setting_info_contents" style="margin-bottom: 30px;">
+            <p>CPU Threshold : <span id="cpu_threshold_data"></span> %  Memory Threshold : <span id="memory_threshold_data"></span> MB</p>
+            <p>Interval Time : <span id="alarm_interval_time_data"></span></p>
+          </div>
+        </div>
+        <div class="cpu_setting">
+          <h4>CPU Setting</h4>
+          <div class="cpu_setting_btn_area">
+            <input id="cpu_threshold" type="text" class="input large" style="width: 300px;" placeholder="input your cpu threshold (%)">
+            <span><a h class="btn large" onclick="change_user_cpu_threshold()">변경</a></span>
+            <!-- <span><a href="" class="btn large" onclick="disable_user_cpu_alarm()">알림 안함</a></span> -->
+          </div>
+        </div>
+        <div class="memory_setting">
+          <h4>Memory Setting</h4>
+          <div class="memory_setting_btn_area">
+            <input id="memory_threshold" type="text" class="input large" style="width: 300px;" placeholder="input your memory threshold (MB)">
+            <span><a class="btn large" onclick="change_user_memory_threshold()">변경</a></span>
+            <!-- <span><a href="" class="btn large" onclick="disable_user_memory_alarm()">알림 안함</a></span> -->
+          </div>
+        </div>
+        <div class="interval_timne_setting">
+          <h4>Interval Setting</h4>
+          <div class="interval_time_setting_btn_area">
+            <input id="interval_time" type="text" class="input large" style="width: 300px;" placeholder="input your interval alarm time (minute)">
+            <span><a class="btn large" onclick="change_user_interval_time()">변경</a></span>
+            <span><a class="btn large" onclick="disable_alarm()">알림 안함</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="alarm_table_area">
+        <div class="alarm_btn_area" style="margin-bottom: 10px;">
+          <div class="btn large" onclick="update_alarm_table()">
+            <i class="icon-search">Update Table</i>
+          </div>
+        </div>
+        <div id="alarm_table" class="xtable" style="margins-top: 7px;">
+          <table class="table simple headline nowrap">
+            <thead>
+              <tr>
+                <th>DataTime</th>
+                <th>CPU Usgae</th>
+                <th>Memory Usgae</th>
+                <th>Process count</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <script type="text/template" id="tpl_row">
+          <! if(selectedProcessRowName == process_id) { !>
+            <tr class="selected">
+          <! } else { !>
+            <tr>
+          <! } !>
+            <td>
+              <!= datatime !>
+            </td>
+            <td>
+              <!= cpu_usage !> %
+            </td>
+            <td>
+              <!= memory_usage !> MB
+            </td>
+            <td>
+              <!= process_count !>
+            </td>
+          </tr>
+        </script>
+
+        <script id="tpl_none" type="text/template">
+          <tr>
+            <td colspan="4" class="none" align="center">Data does not exist.</td>
+          </tr>
+        </script>
+      </div>
+    </div>
+    <div class="setting_view" style="margin-top: 50px;">
+      <div class="process_id_select_area">
+        <h4>Process Selct Realtime View</h4>
+        <div class="process_id_input_btn_area">
+          <input id="pid" type="text" class="input large" style="width: 300px;" placeholder="input your process id ex) 4">
+          <span><a class="btn large" onclick="call_update_process_chart()">Monitoring</a></span>
+        </div>
+      </div>
+      <div class="process_realtime_chart_view">
+        <div class="process_chart_block">
+          <h4>Process CPU Usage <small class="process_names"></small></h4>
+          <div id="process_cpu_chart" style="margin-left: 10px; margin-right: 10px;">
+
+          </div>
+        </div>
+        <div class="process_chart_block">
+          <h4>Process Memory Usage <small class="process_names"></small></h4>
+          <div id="process_memory_chart" style="margin-left: 10px; margin-right: 10px;">
+
+          </div>
+        </div>
+        <div class="process_chart_block">
+          <h4>Process Thread Count <small class="process_names"></small></h4>
+          <div id="process_thread_chart" style="margin-left: 10px; margin-right: 10px;">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

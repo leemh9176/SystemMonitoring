@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- Basic style components -->
+  <link rel="stylesheet" href="/jui/dist/ui.min.css" />
+  <link rel="stylesheet" href="/jui/dist/ui-jennifer.min.css" />
+  <!-- Grid style components -->
+  <link rel="stylesheet" href="/jui-grid/dist/grid.min.css" />
+  <link rel="stylesheet" href="/jui-grid/dist/grid-jennifer.min.css" />
+  <script type="text/javascript" src="javascripts/function.js"></script>
+  <script type="text/javascript" src="/jui-core/dist/core.min.js"></script>
+  <script type="text/javascript" src="/jui/dist/ui.min.js"></script>
+  <script type="text/javascript" src="/jui-grid/dist/grid.min.js"></script>
+  <script type="text/javascript" src="/jui-chart/dist/chart.min.js"></script>
+  <script type="text/javascript" src="javascripts/jui_control.js"></script>
+  <script type="text/javascript">
+    function callResize() {
+      var height = document.body.scrollHeight;
+      console.log(height);
+      parent.Resize_Iframe(height);
+    }
+  </script>
+  <title>System Monitoring Service</title>
+</head>
+
+<body class="jui">
+  <h2>OS List</h2>
+  <div id="os_list" class="xtable" style="margin-top: 7px;">
+    <table class="table simple haedline">
+      <thead>
+        <tr>
+          <th>Server Name</th>
+          <th>OS Name</th>
+          <th>User Name</th>
+          <th>IP Address</th>
+          <th>CPU Usage</th>
+          <th>Memory Usage</th>
+          <th>Number of Core</th>
+          <th>Data Input Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script type="text/template" id="tpl_row">
+    <tr>
+      <td>
+        <!= server_name !>
+      </td>
+      <td>
+        <!= os_name !>
+      </td>
+      <td>
+        <!= user_name !>
+      </td>
+      <td>
+        <!= ip_address !>
+      </td>
+      <td>
+        <!= cpu_usage !>
+      </td>
+      <td>
+        <!= memory_usage !>
+      </td>
+      <td>
+        <!= core_count !>
+      </td>
+      <td>
+        <!= data_time !>
+      </td>
+    </tr>
+  </script>
+  <script id="tpl_none" type="text/template">
+    <tr>
+      <td colspan='8' class='none' align='center'>Data does not exist.</td>
+    </tr>
+  </script>
+  </br>
+  </br>
+  <div class="summary_container">
+    <div class="use_info">
+      <h4>사용법</h4>
+      <p>차트를 보기 전 수집기에 로그인을 한 후 전송버튼을 통해 PC의 데이터를 전송해 주세요.</p>
+      <P>전송을 하지 않을 경우 해당 시간의 데이터는 0 또는 none data 로 입력됩니다.</P>
+      </br>
+      <p>실시간 : 5분 동안 수집된 데이터를 차트에 렌더링 합니다. (2초 간격)</p>
+      <p>30분 ~ 24시간 : 각각의 시간동안 1분 단위의 평균값을 차트에 렌더링 합니다. (1분 간격)</p>
+      </br>
+    </div>
+  </div>
+</body>
+
+</html>

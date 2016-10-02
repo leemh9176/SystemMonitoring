@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>logout page</title>
+  </head>
+  <body>
+    <%-JSON.stringify(session)%>
+    <form action="/logout" method="post">
+      <button type="submit" name="button">Logout</button>      
+    </form>
+  </body>
+</html>

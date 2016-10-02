@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="javascripts/function.js"></script>
+  <title>System Monitoring Service</title>
+</head>
+
+<body class="jui">
+  <div class="container">
+    <nav id="navbar" class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">System Monitoring</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <form action="" class="form-signin" method="POST">
+        <h2 class="form-signin-heading">Please Login</h2>
+        <label for="inputID" class="sr-only">ID</label>
+        <input type="text" id="input_id" name="input_id" class="form-control" placeholder="ID" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="input_pw" name="input_pw" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">Login</button>
+      </form>
+      <div class="signup">
+        <input type="button" value="Sign up" class="btn btn-lg btn-primary btn-block" onclick="move_signup()" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

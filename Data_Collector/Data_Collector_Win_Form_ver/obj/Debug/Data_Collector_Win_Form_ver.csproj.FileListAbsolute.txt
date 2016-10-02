@@ -1,0 +1,11 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\bin\Debug\Data_Collector_Win_Form_ver.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\bin\Debug\Data_Collector_Win_Form_ver.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\bin\Debug\Data_Collector_Win_Form_ver.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\obj\Debug\Data_Collector_Win_Form_ver.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\obj\Debug\Data_Collector_Win_Form_ver.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\obj\Debug\Data_Collector_Win_Form_ver.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\obj\Debug\Data_Collector_Win_Form_ver.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\obj\Debug\Data_Collector_Win_Form_ver.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\obj\Debug\Data_Collector_Win_Form_ver.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\bin\Debug\System.Net.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Data_Collector\Data_Collector_Win_Form_ver\bin\Debug\MySql.Data.dll

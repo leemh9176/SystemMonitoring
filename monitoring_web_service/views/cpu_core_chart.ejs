@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- Basic style components -->
+  <link rel="stylesheet" href="/jui/dist/ui.min.css" />
+  <link rel="stylesheet" href="/jui/dist/ui-jennifer.min.css" />
+  <!-- Grid style components -->
+  <link rel="stylesheet" href="/jui-grid/dist/grid.min.css" />
+  <link rel="stylesheet" href="/jui-grid/dist/grid-jennifer.min.css" />
+  <script type="text/javascript" src="javascripts/function.js"></script>
+  <script type="text/javascript" src="/jui-core/dist/core.min.js"></script>
+  <script type="text/javascript" src="/jui/dist/ui.min.js"></script>
+  <script type="text/javascript" src="/jui-grid/dist/grid.min.js"></script>
+  <script type="text/javascript" src="/jui-chart/dist/chart.min.js"></script>
+  <script type="text/javascript" src="javascripts/jui_control.js"></script>
+  <script type="text/javascript">
+    function callResize() {
+      var height = document.body.scrollHeight;
+      console.log(height);
+      parent.Resize_Iframe(height);
+    }
+  </script>
+  <title>System Monitoring Service</title>
+</head>
+
+<body class="jui">
+  <div class="popover top">
+    <div class="head">Title</div>
+    <div class="body">
+      <div class="image"><i class="icon-caution"></i></div>
+      <div class="message">Message Message Message Message Message Message Message</div>
+    </div>
+  </div>
+  <div class="my_container">
+    <h2>CPU Core Chart</h2>
+    <div class="my_chart">
+      <div class="chart_view" style="max-width: 1400px; right:0; left:0; margin-right: auto; margin-left:auto;">
+
+
+      </div>
+    </div>
+    <div class="my_table">
+      <div class="process_cpu_view" style="max-width: 1400px; right: 0; left:0; margin-right: auto; margin-left: auto;">
+        <h4>CPU Usage per Process</h4>
+        <div class="process_list">
+          <div id="CPU_progressbar_table" class="xtable" style="margin-top: 7px;">
+            <table class="table simple headline nowrap">
+              <thead>
+                <tr>
+                  <th style="width: 10%;">Name</th>
+                  <th style="width: 10%";>ID</th>
+                  <th style="width: 70%;">CPU Usage</th>
+                  <th style="width: 10%;">Value</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <script type="text/template" id="tpl_row">
+            <tr>
+              <td>
+                <!= name !>
+              </td>
+              <td>
+                <!= process_id !>
+              </td>
+              <td>
+                <!= progress_data !>
+              </td>
+              <td>
+                <!= data_value !>
+              </td>
+            </tr>
+          </script>
+          <script id="tpl_none" type="text/template">
+            <tr>
+              <td colspan="4" class="none" align="center">Data does not exist.</td>
+            </tr>
+          </script>
+
+          <script id="tpl_menu" type="text/template">
+            <div class="dropdown">
+              <div class="anchor"></div>
+
+              <ul style="width: 150px">
+                <! for(var i = 0; i < columns.length; i++) { !>
+                <li>
+                  <input type="checkbox" />
+                  <!= columns[i] !>
+                </li>
+                <! } !>
+              </ul>
+            </div>
+          </script>
+
+          <script id="tpl_loading" type="text/template">
+            <div class="loading"></div>
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

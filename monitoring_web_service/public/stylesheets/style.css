@@ -1,0 +1,412 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}*/
+html, body {
+  height: 100%;
+
+}
+.jui {
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+#navbar {
+  margin-top: 10px;
+}
+
+.use_info {
+  max-width: 550px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-signin {
+  max-width: 440px;
+  padding: 15px;
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+
+.form-signin h2 {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #ccc;
+}
+.form-signup h2 {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #ccc;
+}
+
+.form-signin input {
+  margin-bottom: 10px;
+}
+
+.form-signup {
+  max-width: 440px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.signup_label {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.signup {
+  max-width: 440px;
+  padding-left: 15px;
+  padding-right: 15px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summary_container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+}
+.summary-box {
+  position: relative;
+  max-width: 240px;
+  height: 320px;
+  border-radius: 5px;
+  background-color: #eee;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-top: 80px;*/
+  /*padding-top: 80px;*/
+}
+
+.summary-box-info {
+  width: 100%;
+  height: 80%;
+  background-color: #eee;
+  padding: 15px;
+}
+
+.summary-box-info-title {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-area {
+  position: relative;
+  width: 80px;
+  left: 0;
+  right: 0;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#os_list {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+}
+.list_row {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  display: table-cell;
+  text-align: center;
+}
+.barname {
+  display: block;
+  float: left;
+  width: 10%;
+}
+.progressbar {
+  display: block;
+  float: left;
+  width: 90%;
+}
+
+.my_container {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.my_btn {
+  display: block;
+  position: relative;
+  width: 95%;
+  height: auto;
+  float: left;
+}
+.my_chart {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: left;
+  border: 2px solid;
+  border-color: #eee;
+  border-radius: 15px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.my_table {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: left;
+  border: 2px solid;
+  border-radius: 15px;
+  border-color: #eee;
+  padding: 1%;
+}
+.my_btn {
+  margin-bottom: 5px;
+}
+.my_dashboard {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.block {
+  position: relative;
+  display: block;
+  float: left;
+}
+.chart {
+  margin: 1%;
+  padding: 0.5%;
+  border: 2px solid;
+  border-radius: 15px;
+  border-color: #eee;
+}
+.my_dashboard_container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.dashboard_chart_area {
+  position: relative;
+  display: block;
+  width: 60%;
+  height: 100%;
+  float: left;
+  padding: 5px;
+}
+.dashboard_table_area {
+  position: relative;
+  display: block;
+  width: 40%;
+  height: 100%;
+  float: left;
+  padding: 5px;
+
+}
+.cpu_chart_area {
+  width: 100%;
+  height: 33.3333%;
+}
+.realtime_cpu {
+  width: 48%;
+  height: 100%;
+}
+.avg_cpu {
+  width: 48%;
+  height: 100%;
+}
+.memory_chart_area {
+  width: 100%;
+  height: 33.3333%:
+}
+.realtime_memory {
+  width: 48%;
+  height: 100%;
+}
+.avg_memory {
+  width: 48%;
+  height: 100%;
+}
+.core_chart_area {
+  width: 100%;
+  height: auto;
+}
+.process_chart_area {
+  width: 100%;
+  height: 33.3333%:
+}
+.process_cpu {
+  width: 31.3333%;
+  height: 100%;
+}
+.process_memory {
+  width: 31.3333%;
+  height: 100%;
+}
+.process_thread {
+  width: 31.3333%;
+  height: 100%;
+}
+.process_info_table_area {
+  border: 2px solid;
+  border-radius: 15px;
+  border-color: #eee;
+  padding: 1%;
+}
+.core_container {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: auto;
+  float: left;
+}
+
+.popup_container {
+  margin: 10px;
+}
+
+.setting_view {
+  display: block;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding-left: 3%;
+  padding-right: 3%;
+  border: 2px solid;
+  border-radius: 15px;
+  border-color: #eee;
+}
+
+.setting_area {
+  display: block;
+  float: left;
+  width: 30%;
+}
+.alarm_table_area {
+  display: block;
+  float: left;
+  width: 70%;
+}
+
+.process_realtime_chart_view {
+  margin-top: 10px;
+}
+
+.process_chart_block {
+  display: block;
+  float: left;
+  width: 33.3333%;
+}
+
+/*@media (max-width: 600px) {
+  #table {
+    font-size: 10px;
+  }
+}*/
+@media (min-width: 800px) {
+  .container {
+    width: 770px;
+  }
+  .navbar-brand {
+    font-size: 28px;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    width: 870px;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1100px) {
+  .container {
+    width: 1070px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    width: 1270px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1370px;
+  }
+}
+@media (min-width: 1500px) {
+  .container {
+    width: 1470px;
+  }
+  .my_chart {
+    width: 58%;
+  }
+  .my_table {
+    width: 40%;
+  }
+  .my_dashboard {
+    width: 50%;
+  }
+  .process_info {
+    padding-left: 2%;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    width: 1570px;
+  }
+}
+@media (min-width: 1700px) {
+  .container {
+    width: 1570px;
+  }
+}
+@media (min-width: 1800px) {
+  .container {
+    width: 1770px;
+  }
+}
+@media (min-width: 1900px) {
+  .container {
+    width: 1870px;
+  }
+}
+@media (min-width: 2000px) {
+  .container {
+    width: 1970px;
+  }
+}
+.progress {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  margin-bottom: 0px !important;
+  background: transparent !important;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- Basic style components -->
+  <link rel="stylesheet" href="/jui/dist/ui.min.css" />
+  <link rel="stylesheet" href="/jui/dist/ui-jennifer.min.css" />
+  <!-- Grid style components -->
+  <link rel="stylesheet" href="/jui-grid/dist/grid.min.css" />
+  <link rel="stylesheet" href="/jui-grid/dist/grid-jennifer.min.css" />
+  <script type="text/javascript" src="javascripts/function.js"></script>
+  <script type="text/javascript" src="/jui-core/dist/core.min.js"></script>
+  <script type="text/javascript" src="/jui/dist/ui.min.js"></script>
+  <script type="text/javascript" src="/jui-grid/dist/grid.min.js"></script>
+  <script type="text/javascript" src="/jui-chart/dist/chart.min.js"></script>
+  <script type="text/javascript" src="javascripts/jui_control.js"></script>
+  <title>System Monitoring Service</title>
+</head>
+
+<body class="jui">
+  <script type="text/javascript">
+    var search;
+    var mindatatime;
+    var maxdatatime;
+    window.onload = function() {
+      search = location.search;
+      search = search.split('?');
+      // alert(search);
+      var temp = search[1].split('=');
+      // alert(temp);
+      var temp2 = temp[1].split('&');
+      mindatatime = temp2[0].replace('%20', ' ');
+      maxdatatime = temp[2].replace('%20', ' ');
+      // alert(mindatatime + ", " + maxdatatime);
+      // alert(datatime);
+      load_user_os_popup(mindatatime, "min");
+      load_user_os_popup(maxdatatime, "max");
+      // load_user_core_popup(mindatatime, "min");
+      // load_user_core_popup(maxsdatatime, "max");
+      load_process_info_popup(mindatatime, "min");
+      load_process_info_popup(maxdatatime, "max");
+    }
+  </script>
+
+  <div class="popup_container"style="float: left; width: 45%;">
+    <div class="process_popup_view">
+      <h4>Min OS Information</h4>
+      <div id="time_info_min"></div>
+      <div id="core_info_min"></div>
+      <div class="process_list">
+        <div id="process_info_popup_table_min" class="xtable" style="margin-top: 7px;">
+          <table class="table simple headline nowrap">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>CPU</th>
+                <th>Memory</th>
+                <th>Thread Count</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <script type="text/template" id="tpl_row">
+          <tr>
+            <td>
+              <!= name !>
+            </td>
+            <td>
+              <!= process_id !>
+            </td>
+            <td>
+              <!= process_cpu !>%
+            </td>
+            <td>
+              <!= process_memory !>MB
+            </td>
+            <td>
+              <!= process_thread !>
+            </td>
+          </tr>
+        </script>
+        <script id="tpl_none" type="text/template">
+          <tr>
+            <td colspan="5" class="none" align="center">Data does not exist.</td>
+          </tr>
+        </script>
+        <script id="tpl_loading" type="text/template">
+          <div class="loading"></div>
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup_container"style="float: left; width: 45%; margin-left: 20px;">
+    <div class="process_popup_view">
+      <h4>Max OS Information</h4>
+      <div id="time_info_max"></div>
+      <div id="core_info_max"></div>
+      <div class="process_list">
+        <div id="process_info_popup_table_max" class="xtable" style="margin-top: 7px;">
+          <table class="table simple haedline">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>CPU</th>
+                <th>Memory</th>
+                <th>Thread Count</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <script type="text/template" id="tpl_row">
+          <tr>
+            <td>
+              <!= name !>
+            </td>
+            <td>
+              <!= process_id !>
+            </td>
+            <td>
+              <!= process_cpu !>%
+            </td>
+            <td>
+              <!= process_memory !>MB
+            </td>
+            <td>
+              <!= process_thread !>
+            </td>
+          </tr>
+        </script>
+        <script id="tpl_none" type="text/template">
+          <tr>
+            <td colspan="5" class="none" align="center">Data does not exist.</td>
+          </tr>
+        </script>
+        <script id="tpl_loading" type="text/template">
+          <div class="loading"></div>
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
